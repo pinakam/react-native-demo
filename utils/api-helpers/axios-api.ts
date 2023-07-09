@@ -5,5 +5,5 @@ export const getRequest = async (URL: any) => {
     console.warn(e);
   });
 
-  return response;
+  return response.data;
 };
