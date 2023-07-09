@@ -32,8 +32,8 @@ const App = () => {
             <Text style={{fontSize: 20}}>
               {!product || isEmpty(product.title) ? '-' : product.title}
             </Text>
-            <Text>{product.description}</Text>
-            <Text style={styles.price}>${product.price}</Text>
+            <Text style={styles.description}>{product.description}</Text>
+            <Text style={styles.price}>₹ {product.price}</Text>
           </View>
         </View>
       </>
@@ -68,11 +68,20 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     justifyContent: 'center',
     alignItems: 'center',
+    shadowColor: '#0000FF',
+    shadowOffset: {width: 0, height: 5},
+    shadowOpacity: 1,
+    shadowRadius: 5,
+    elevation: 5, // Only for Android
   },
   price: {
-    color: '#FF0000',
+    color: '#333333',
     fontSize: 20,
     fontWeight: 'bold',
+  },
+  description: {
+    maxWidth: '95%',
+    marginVertical: 10,
   },
 });
 
